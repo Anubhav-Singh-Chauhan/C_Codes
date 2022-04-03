@@ -3,18 +3,26 @@
 void InsertionSort(int *A, int n)
 {
     int key, j;
+    int comparisons=0, shifts=0;
     printf("Sorted array is: ");
     for (int i = 0; i < n; i++)
     {
         key = A[i];
         j = i - 1;
+        comparisons=comparisons+j;
         while (j >= 0 && A[j] > key)
         {
             A[j + 1] = A[j];
             j--;
+            shifts=shifts+1;
         }
         A[j + 1] = key;
     }
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", A[i]);
+    }
+    printf("\nNo. of comparisons are: %d and No. of Shifts are: %d\n",comparisons,shifts);
 }
 
 int main()
@@ -36,8 +44,4 @@ int main()
     }
     printf("\n");
     InsertionSort(A, n);
-    for (int i = 0; i < n; i++)
-    {
-        printf("%d ", A[i]);
-    }
 }
