@@ -3,7 +3,7 @@
 int Merge(int *A, int n, int lb, int mid, int ub)
 {
     int i = lb, j = mid + 1, k = lb;
-    int B[8];
+    int B[n];
     while (i <= mid && j <= ub)
     {
         if (A[i] <= A[j])
