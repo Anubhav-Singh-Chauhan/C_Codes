@@ -1,10 +1,10 @@
 #include <stdio.h>
 
+
 void SelectionSort(int *A, int n)
 {
     int index, temp;
     int comparisons=0, shifts=0;
-    printf("Sorted array is: ");
     for (int i = 0; i < n - 1; i++)
     {
         index = i;
@@ -17,10 +17,14 @@ void SelectionSort(int *A, int n)
                 shifts=shifts+1;
             }
         }
+        if(index!=i)
+        {
         temp = A[i];
         A[i] = A[index];
         A[index] = temp;
+        }
     }
+    printf("Sorted array is: ");
     for (int i = 0; i < n; i++)
     {
         printf("%d ", A[i]);
