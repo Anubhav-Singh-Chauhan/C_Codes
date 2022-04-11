@@ -9,7 +9,7 @@ void InsertionSort(int *A, int n)
     {
         key = A[i];
         j = i - 1;
-        comparisons=comparisons+j;
+        comparisons=comparisons+1;
         while (j >= 0 && A[j] > key)
         {
             A[j + 1] = A[j];
@@ -22,7 +22,7 @@ void InsertionSort(int *A, int n)
     {
         printf("%d ", A[i]);
     }
-    printf("\nNo. of comparisons are: %d and No. of Shifts are: %d\n",comparisons,shifts);
+    printf("\nNo. of comparisons are: %d and No. of Shifts are: %d\n",(comparisons-1),shifts);
 }
 
 int main()
