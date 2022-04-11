@@ -17,27 +17,19 @@ int Max(int *A, int n)
 void CountSort(int *A, int n, int pos)
 {
 
-    int B[n + 1];
-    int max = (A[0] / pos) % 10;
+    int Count[10]; 
 
-    for (int i = 1; i < n; i++)
-    {
-        if (((A[i] / pos) % 10) > max)
-            max = A[i];
-    }
-    int Count[max + 1];
-
-    for (int i = 0; i < max; ++i)
+    for (int i = 0; i < n; i++)
     {
         Count[i] = 0;
     }
 
     for (int i = 0; i < n; i++)
     {
-        Count[(A[i] / pos) % 10]++;
+        ++Count[(A[i] / pos) % 10];
     }
 
-    for (int i = 1; i < 10; i++)
+    for (int i = 1; i <= 10; i++)
     {
         Count[i] += Count[i - 1];
     }
@@ -60,7 +52,7 @@ void RadixSort(int *A, int n)
     int max = Max(A, n);
     int pos;
 
-    for (pos = 1; max / pos > 0; pos *= 10)
+    for (pos = 1; max / pos > 0; pos*10)
     {
         CountSort(A, n, pos);
     }
