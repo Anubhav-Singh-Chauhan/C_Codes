@@ -5,7 +5,7 @@ void InsertionSort(int *A, int n)
     int key, j;
     int comparisons=0, shifts=0;
     printf("Sorted array is: ");
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i < n; i++)
     {
         key = A[i];
         j = i - 1;
